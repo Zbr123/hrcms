@@ -18,7 +18,9 @@ public class UpdateProliePage {
     public static String estate_error = "//div[normalize-space()='Please enter state']";
 
     public static String state = "span[title='State']";
-    public static String stateName = "div[title='Dubai']";
+    public static String stateName(String state){
+        return  "div[title='"+state+"']";
+    }
     public static String  Document(String document){return "//div[contains(text(),'"+document+"')]";}
     public static String personalDetail = "documentTitle0";
     public static String city = "city";
@@ -80,8 +82,8 @@ public class UpdateProliePage {
     public static WebElement getState(){
         return Base_Class.driver.findElement(By.cssSelector(state));
     }
-    public static WebElement getStateName(){
-        return Base_Class.driver.findElement(By.cssSelector(stateName));
+    public static WebElement getStateName(String state){
+        return Base_Class.driver.findElement(By.cssSelector(stateName(state)));
     }
     public static WebElement getDocumentName(String document){
         return Base_Class.driver.findElement(By.xpath(Document(document)));

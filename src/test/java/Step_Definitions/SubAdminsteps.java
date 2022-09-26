@@ -82,10 +82,12 @@ public class SubAdminsteps {
     }
 
     @And("[Sub Admin] User should validate the error message on the email {string}")
-    public void subAdminUserShouldValidateTheErrorMessageOnTheEmail(String error) {
-        SignUpPage.confirmPasswordErrorMessage().isDisplayed();
-        Assert.assertEquals(error,"Please enter your Email.");
+    public void subAdminUserShouldValidateTheErrorMessageOnTheEmail(String emailerror) {
+        String actual = SubAdminPages.get_Error_Email(emailerror).getText();
+        Assert.assertEquals(emailerror,actual);
     }
+
+
 }
 
 

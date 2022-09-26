@@ -15,7 +15,7 @@ public class SignUpPage {
     //locator
     public static String signUpUserTapOnSignUpButton = "a[href='/signup']";
     public static String signUpUserEnterTheName = "companyName";
-    public static String signUpUserEnterTheEmail = "input[placeholder='Email Address']";
+    public static String signUpUserEnterTheEmail = "#email";
     public static String signUpUserTapTheDropDownButton = "(//div[@class='ant-select-item-option-content'])[4]";
     public static String signUpEnterTheCompanyCode = "//span[@class='ant-select-selection-search']";
     public static String signUpUserEnterThePhoneNo = "//input[@placeholder='Phone Number']";
