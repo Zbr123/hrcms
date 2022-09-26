@@ -80,7 +80,7 @@ Feature: Login Tests
     Then    [Sign Up] User enter the otp code "1111"
     And     [Sign Up] User tap on verify button
 
-  Scenario Outline: Multiple user
+  Scenario Outline: Multiple users
     Given   [Sign Up] User tap on Sign up button
     When    [Sign up] Enter the user name email id "<company>" and "<email>"
     Then    [Sign Up] Enter the Phone code "92"

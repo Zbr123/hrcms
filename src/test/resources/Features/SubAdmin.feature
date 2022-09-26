@@ -1,9 +1,15 @@
 @AddEmployer
 Feature: AddEmployer
 
+<<<<<<< HEAD
   Scenario: USer create a Sub Admin
     Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
     When    [Login Page] User enter the password "123kamelpay321"
+=======
+  Scenario: User create a Sub Admin
+    Given   [Login Page] User enter the email "talha1@mailinator.com"
+    When    [Login Page] User enter the password "Password1"
+>>>>>>> 1fe350fa86ebe4c7f54097b61909ee8533f22fd8
     Then    [Login page] User tap on login button
     Given   [Sub Admin] User tap on the sub admin button
     Then    [Sub Admin] User tap on the add sub button
@@ -19,6 +25,7 @@ Feature: AddEmployer
     Then    [Sub Admin] User tap the role manage access "USERS_CREATE"
     And     [Sub Admin] User tap on the submit button
 
+<<<<<<< HEAD
   Scenario: USer create a Sub Admin without enter a email
     Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
     When    [Login Page] User enter the password "123kamelpay321"
@@ -74,6 +81,10 @@ Feature: AddEmployer
   Scenario: USer create a Sub Admin without select role
     Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
     When    [Login Page] User enter the password "123kamelpay321"
+=======
+  Scenario: User create a Sub Admin without enter a email
+    When    [Login Page] User enter the password "Password1"
+>>>>>>> 1fe350fa86ebe4c7f54097b61909ee8533f22fd8
     Then    [Login page] User tap on login button
     Given   [Sub Admin] User tap on the sub admin button
     Then    [Sub Admin] User tap on the add sub button
