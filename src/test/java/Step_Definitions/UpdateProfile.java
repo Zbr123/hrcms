@@ -367,8 +367,11 @@ public class UpdateProfile {
         UpdateProliePage.get_Second_Brows_Button().click();
         Thread.sleep(3000);
 
+        String current_directory = System.getProperty("user.dir");
+
+
         Robot rb = new Robot();
-        StringSelection str = new StringSelection("D:\\Hrcms\\src\\test\\java\\document\\Mansha List test.xlsx");
+        StringSelection str = new StringSelection(current_directory+"src\\test\\java\\document\\Mansha List test.xlsx");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
         // press Contol+V for pasting
         rb.keyPress(KeyEvent.VK_CONTROL);
@@ -405,4 +408,10 @@ public class UpdateProfile {
     }
 
  */
+
+    public static void main(String[] args) {
+
+    }
+
+
 }
