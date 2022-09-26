@@ -61,7 +61,7 @@ public class Base_Class {
             //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4000));
             driver.manage().window().maximize();
             //System.setProperty("webdriver.chrome.whitelistedIps", "");
-            URL url = new URL("http://10.40.5.62:49378");
+            URL url = new URL("https://employer.kamelpay.me/");
             driver.navigate().to(url);
 
 

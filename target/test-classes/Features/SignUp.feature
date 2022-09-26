@@ -90,6 +90,24 @@ Feature: Login Tests
     And     [Sign Up] User tap on Sign up button on SignUp Page
     Then    [Sign Up] User enter the otp code "1111"
     And     [Sign Up] User tap on verify button
+    And     [Login page] Verified user land on update profile page "Update Profile"
+    Then    [Update Profile] User enter the establishment id ""
+    And     [Update Profile] User the address "asdfghjkl;1234567890"
+    Then    [Update Profile] User tap on State
+    And     [Update Profile] Select the state "Dubai"
+    When    [Update Profile] User enter the city "Dubai"
+    Then    [Update Profile] User enter the document name "Trade License"
+    And     [Update Profile] User enter the document tittle "personal details"
+    Then    [Update Profile] User enter the year 2017
+    And     [Update Profile] User enter the month "Dec"
+    Then    [Update Profile] User enter the day "3"
+    And     [Update Profile] User enter the expire year 2030
+    Then    [Update Profile] User enter the expire month "Oct"
+    And     [Update Profile] User enter the expire day "31"
+    Then    [Update Profile] User tap on browse file
+    #Then    [Update Profile] User upload the personal document
+    And     [Update Profile] User enter the submit button
+
 
     Examples:
       | company      | email      |

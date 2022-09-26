@@ -3,8 +3,8 @@ Feature: AddEmployer
 
   @Update @UpdateProfile1
   Scenario: Add new employer
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -40,8 +40,8 @@ Feature: AddEmployer
 
 
   Scenario: User validate the error message on Mol no  "Please enter Mol Number"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -75,8 +75,8 @@ Feature: AddEmployer
     Then    [Add Employer] User validate the error message "Please enter Mol Number"
 
   Scenario: User validate the error message on first name "Please enter First Name"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -111,8 +111,8 @@ Feature: AddEmployer
 
 
   Scenario: User validate the error message on first name "Please enter Last Name"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -146,8 +146,8 @@ Feature: AddEmployer
     Then    [Add Employer] user validate the error message on last name "Please enter Last Name"
 
   Scenario: User validate the error message on display name "Please enter Display Name"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -180,8 +180,8 @@ Feature: AddEmployer
     Then    [Add Employer] user validate the error message on display name "Please enter Display Name"
 
   Scenario: User validate the error message on display name "Please enter Gender"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -215,8 +215,8 @@ Feature: AddEmployer
     Then    [Add Employer] user validate the error message on gender "Please enter Gender"
 
   Scenario: User validate the error message on date of birth "Please enter Date Of Birth"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -239,8 +239,8 @@ Feature: AddEmployer
     Then    [Add Employer] user validate the error message on date of birth "Please enter Date Of Birth"
 
   Scenario: User validate the error message on passport no "Please enter Passport Number"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -274,8 +274,8 @@ Feature: AddEmployer
     Then    [Add Employer] user validate the error message on passport no "Please enter Passport Number"
 
   Scenario: user validate the error message on nationality "Please enter Nationality"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -309,8 +309,8 @@ Feature: AddEmployer
     Then    [Add Employer] user validate the error message on nationality "Please enter Nationality"
 
   Scenario:  user validate the error message on Mol no "Please enter Mol Number"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -345,8 +345,8 @@ Feature: AddEmployer
 
 
   Scenario: user validate the error message on employee No "Please enter Employee Code"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -380,8 +380,8 @@ Feature: AddEmployer
     Then    [Add Employer] user validate the error message on employee No "Please enter Employee Code"
 
   Scenario: user validate the error message on employee No "Please enter Date of joining"
-    Given   [Login Page] User enter the email "talha1@mailinator.com"
-    When    [Login Page] User enter the password "Password1"
+    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
+    When    [Login Page] User enter the password "123kamelpay321"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
     Given   [Add Employer] user tap on new employer button
@@ -397,7 +397,7 @@ Feature: AddEmployer
     And     [Add Employer] user enter the passport no ""
     Then    [Add Employer] user tao the nationality
     Then    [Add Employer] user select the nationality "Afghanistan"
-    And     [Add Employer] user enter the Mol no ""1234
+    And     [Add Employer] user enter the Mol no ""
     Then    [Add Employer] user enter the Employer code "12345"
     And     [Add Employer] user enter the date of joining year 2017
     And     [Update Profile] User enter the month of joining  "Jan"

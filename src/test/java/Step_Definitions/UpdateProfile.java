@@ -127,7 +127,7 @@ public class UpdateProfile {
         // for pressing and releasing Enter
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
-        ScrollVertical(get_Add_Emplyer_Button());
+        //ScrollVertical(get_Add_Emplyer_Button());
         Thread.sleep(5000);
     }
 
