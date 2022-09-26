@@ -9,3 +9,6 @@ Feature: Dashboard Feature
     And [Dashboard Page Admin Portal] User enters a valid password
     And [Dashboard Page Admin Portal] User clicks on the login button
     Then [Dashboard Page Admin Portal] User should see the dashboard with heading "Hi Administrator!"
+
+
+

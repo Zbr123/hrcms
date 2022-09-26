@@ -69,8 +69,6 @@ public class Base_Class {
         }
 
 
-
-
         catch(Exception exp){
             System.out.println("Cause is: " + exp.getCause());
             System.out.println("Message is: " + exp.getMessage());
