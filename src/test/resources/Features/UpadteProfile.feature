@@ -18,16 +18,7 @@ Feature: Update Profile
     Then    [Update Profile] User tap on State
     And     [Update Profile] Select the state "Dubai"
     When    [Update Profile] User enter the city "Dubai"
-    Then    [Update Profile] User enter the document name "Trade License"
-    And     [Update Profile] User enter the document tittle "personal details"
-    Then    [Update Profile] User enter the year 2017
-    And     [Update Profile] User enter the month "Dec"
-    Then    [Update Profile] User enter the day "3"
-    And     [Update Profile] User enter the expire year 2030
-    Then    [Update Profile] User enter the expire month "Oct"
-    And     [Update Profile] User enter the expire day "31"
-    Then     [Update Profile] User tap on browse file
-    And     [Update Profile] User enter the submit button
+34
     Then    [Update Profile] Validate the establishment id error "Please enter establishment Id"
 
   Scenario: Validate the address error message

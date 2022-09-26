@@ -17,7 +17,7 @@ public class SubAdminPages {
     public WebDriverWait wait = new WebDriverWait(driver, 30);
     //locator
     public static String Sub_Admin_Button = "#user";
-    public static String Add_Admin_BUtton= "button[title='Add Sub Admin']";
+    public static String Add_Admin_BUtton= "button[title='Add Team Member']";
     public static String Name = "#name";
     public static String Email = "#email";
     public static String Password = "#password";
@@ -29,8 +29,11 @@ public class SubAdminPages {
     public static String Manage_Access(String role){
         return "input[value='"+role+"']";
     }
-    public static String Add_Sub_Admin = "button[title='Add Sub Admin'][type='submit']";
+    public static String Add_Sub_Admin = "button[title='Add Team Member'][type='submit']";
     public static String Submit = "div[class='ant-row ant-form-item mb-0'] span:nth-child(2)";
+    public static String Error_Email(String error){
+        return "//div[normalize-space()='"+error+"']";
+    }
 
 
     public static WebElement get_Sub_Admin_Button(){
@@ -65,5 +68,9 @@ public class SubAdminPages {
     }
     public static WebElement get_Submit(){
         return Base_Class.driver.findElement(By.cssSelector(Submit));
+    }
+
+    public static WebElement get_Error_Email(String error) {
+        return Base_Class.driver.findElement(By.xpath(Error_Email(error)));
     }
 }

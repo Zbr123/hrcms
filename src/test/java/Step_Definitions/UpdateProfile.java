@@ -61,9 +61,9 @@ public class UpdateProfile {
 
     @And("[Update Profile] Select the state {string}")
     public void updateProfileSelectTheState(String name) throws InterruptedException {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(stateName)));
-        UpdateProliePage.getStateName().isSelected();
-        UpdateProliePage.getStateName().click();
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(name)));
+        UpdateProliePage.getStateName(name).isSelected();
+        UpdateProliePage.getStateName(name).click();
         //Select sel = new Select();
 
 
