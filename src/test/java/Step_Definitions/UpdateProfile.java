@@ -411,9 +411,6 @@ public class UpdateProfile {
 
  */
 
-    public static void main(String[] args) {
-
-    }
 
 
 }
