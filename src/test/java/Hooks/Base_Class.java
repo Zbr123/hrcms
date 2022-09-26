@@ -88,10 +88,6 @@ public class Base_Class {
 //
 //    }
 
-    public static void main(String[] args) {
-        String projectpath = System.getProperty("user.dir");
-        System.out.println(projectpath);
-    }
 
     @After
     public void teardown(){

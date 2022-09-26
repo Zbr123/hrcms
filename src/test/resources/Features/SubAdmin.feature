@@ -1,7 +1,7 @@
 @AddEmployer
 Feature: AddEmployer
 
-  Scenario: USer create a Sub Admin
+  Scenario: User create a Sub Admin
     Given   [Login Page] User enter the email "talha1@mailinator.com"
     When    [Login Page] User enter the password "Password1"
     Then    [Login page] User tap on login button
@@ -19,7 +19,7 @@ Feature: AddEmployer
     Then    [Sub Admin] User tap the role manage access "USERS_CREATE"
     And     [Sub Admin] User tap on the submit button
 
-  Scenario: USer create a Sub Admin without enter a email
+  Scenario: User create a Sub Admin without enter a email
     When    [Login Page] User enter the password "Password1"
     Then    [Login page] User tap on login button
     Given   [Sub Admin] User tap on the sub admin button
