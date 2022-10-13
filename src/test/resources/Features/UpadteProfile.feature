@@ -15,10 +15,19 @@ Feature: Update Profile
     And     [Sign Up] User tap on verify button
     And     [Login page] Verified user land on update profile page "Update Profile"
     And     [Update Profile] User the address "asdfghjkl;1234567890"
-    Then    [Update Profile] User tap on State
     And     [Update Profile] Select the state "Dubai"
     When    [Update Profile] User enter the city "Dubai"
-34
+    Then    [Update Profile] User enter the document name "Trade License"
+    And     [Update Profile] User enter the document tittle "personal details"
+    Then    [Update Profile] User enter the year 2017
+    And     [Update Profile] User enter the month "Dec"
+    Then    [Update Profile] User enter the day "3"
+    And     [Update Profile] User enter the expire year 2030
+    Then    [Update Profile] User enter the expire month "Oct"
+    And     [Update Profile] User enter the expire day "31"
+    Then     [Update Profile] User tap on browse file
+    #Then    [Update Profile] User upload the personal document
+    And     [Update Profile] User enter the submit button
     Then    [Update Profile] Validate the establishment id error "Please enter establishment Id"
 
   Scenario: Validate the address error message
@@ -34,7 +43,6 @@ Feature: Update Profile
     And     [Sign Up] User tap on verify button
     And     [Login page] Verified user land on update profile page "Update Profile"
     Then    [Update Profile] User enter the establishment id ""
-    Then    [Update Profile] User tap on State
     And     [Update Profile] Select the state "Dubai"
     When    [Update Profile] User enter the city "Dubai"
     Then    [Update Profile] User enter the document name "Trade License"
@@ -91,7 +99,6 @@ Feature: Update Profile
     And     [Login page] Verified user land on update profile page "Update Profile"
     Then    [Update Profile] User enter the establishment id ""
     And     [Update Profile] User the address "asdfghjkl;1234567890"
-    Then    [Update Profile] User tap on State
     And     [Update Profile] Select the state "Dubai"
     Then    [Update Profile] User enter the document name "Trade License"
     And     [Update Profile] User enter the document tittle "personal details"
@@ -119,7 +126,6 @@ Feature: Update Profile
     And     [Login page] Verified user land on update profile page "Update Profile"
     Then    [Update Profile] User enter the establishment id ""
     And     [Update Profile] User the address "asdfghjkl;1234567890"
-    Then    [Update Profile] User tap on State
     And     [Update Profile] Select the state "Dubai"
     When    [Update Profile] User enter the city "Dubai"
     And     [Update Profile] User enter the document tittle "personal details"
@@ -147,7 +153,6 @@ Feature: Update Profile
     And     [Login page] Verified user land on update profile page "Update Profile"
     Then    [Update Profile] User enter the establishment id ""
     And     [Update Profile] User the address "asdfghjkl;1234567890"
-    Then    [Update Profile] User tap on State
     And     [Update Profile] Select the state "Dubai"
     When    [Update Profile] User enter the city "Dubai"
     Then    [Update Profile] User enter the document name "Trade License"
@@ -171,7 +176,6 @@ Feature: Update Profile
     And     [Login page] Verified user land on update profile page "Update Profile"
     Then    [Update Profile] User enter the establishment id ""
     And     [Update Profile] User the address "asdfghjkl;1234567890"
-    Then    [Update Profile] User tap on State
     And     [Update Profile] Select the state "Dubai"
     When    [Update Profile] User enter the city "Dubai"
     Then    [Update Profile] User enter the document name "Trade License"
@@ -180,11 +184,11 @@ Feature: Update Profile
     And     [Update Profile] User enter the month "Dec"
     Then    [Update Profile] User enter the day "3"
     And     [Update Profile] User enter the expire year 2030
-    Then    [Update Profile] User enter the expire month "Oct"
+    Then    [Update Profile] User enter the expire month "Dec"
     And     [Update Profile] User enter the expire day "31"
     Then    [Update Profile] User tap on browse file
     And     [Update Profile] User tap on the add more document
-    #Then    [Update Profile] User enter the document name "Establishment Card"
+    Then    [Update Profile] User enter the document name "Establishment Card"
     Then    [Update Profile] User enter the second issue year 2017
     And     [Update Profile] User enter the second month "Dec"
     Then    [Update Profile] User enter the  second day "3"
@@ -209,7 +213,6 @@ Feature: Update Profile
     And     [Login page] Verified user land on update profile page "Update Profile"
     Then    [Update Profile] User enter the establishment id ""
     And     [Update Profile] User the address "asdfghjkl;1234567890"
-    Then    [Update Profile] User tap on State
     And     [Update Profile] Select the state "Dubai"
     When    [Update Profile] User enter the city "Dubai"
     Then    [Update Profile] User enter the document name "Trade License"
@@ -241,7 +244,6 @@ Feature: Update Profile
     And     [Login page] Verified user land on update profile page "Update Profile"
     Then    [Update Profile] User enter the establishment id ""
     And     [Update Profile] User the address "asdfghjkl;1234567890"
-    Then    [Update Profile] User tap on State
     And     [Update Profile] Select the state "Dubai"
     When    [Update Profile] User enter the city "Dubai"
     Then    [Update Profile] User enter the document name "Trade License"

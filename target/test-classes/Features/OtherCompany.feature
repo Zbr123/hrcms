@@ -3,8 +3,8 @@ Feature: OtherCompany
 
   @Update @UpdateProfile1
   Scenario: Add new employer
-    Given   [Login Page] User enter the email "kamelpay469437@kamelpay.com"
-    When    [Login Page] User enter the password "123kamelpay321"
+    Given   [Login Page] User enter the email "ali@mailinator.com"
+    When    [Login Page] User enter the password "Password1"
     Then    [Login page] User tap on login button
     Then    [Other Company] User tap on my other companies
     Given   [Add Employer] user tap on Add other company button

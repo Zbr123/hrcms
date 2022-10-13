@@ -5,6 +5,7 @@ import Pages.Android.AddEmployerPages;
 import Pages.Android.AdminPage;
 import Pages.Android.UpdateProliePage;
 import Tests.Scroll;
+import com.github.dockerjava.core.dockerfile.DockerfileStatement;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,8 +13,10 @@ import io.cucumber.java8.Th;
 import net.bytebuddy.pool.TypePool;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -22,15 +25,16 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 import static Hooks.Base_Class.driver;
-import static Pages.Android.AddEmployerPages.get_Country;
+import static Pages.Android.AddEmployerPages.*;
 import static Pages.Android.AdminPage.admin_Tab;
 import static Pages.Android.UpdateProliePage.*;
 import static Tests.Current_Date.currentYear;
 
-public class AddEmployerSteps {
+public class AddEmployerSteps<Save_mol> {
 
     public WebDriverWait wait = new WebDriverWait(driver, 30);
     //create a soft-assertion object
@@ -96,26 +100,43 @@ public class AddEmployerSteps {
     }
 
     @Then("[Add Employer] user select the nationality {string}")
-    public void addEmployerUserSelectTheNationality(String country) {
-        //((JavascriptExecutor)driver).executeScript("arguments[].scroll",get_Country(country));
-        //Scroll.ScrollVertical(get_Country(country));
-        AddEmployerPages.get_Country(country).click();
+    public void addEmployerUserSelectTheNationality(String country) throws InterruptedException {
+//        AddEmployerPages.get_Select_Country().click();
+//        Thread.sleep(5000);
+        AddEmployerPages.get_Nationality().sendKeys(country);
+        if(get_Nationality().isDisplayed()){
+            AddEmployerPages.get_Nationality().click();
+            AddEmployerPages.get_Nationality().sendKeys(Keys.ENTER);
+
+        }
+        else {
+            AddEmployerPages.get_Nationality().sendKeys(country);
+            AddEmployerPages.get_Nationality().sendKeys(Keys.ENTER);
+        }
+
     }
 
     @Then("[Add Employer] user tao the nationality")
-    public void addEmployerUserTaoTheNationality() {
-        AddEmployerPages.get_Nationality().click();
+    public void addEmployerUserTaoTheNationality() throws InterruptedException {
+//        AddEmployerPages.get_Nationality().click();
+        AddEmployerPages.get_Nationality().sendKeys("Pakistan");
+        AddEmployerPages.get_Nationality().sendKeys(Keys.ENTER);
+
         //Scroll.ScrollVertical(driver.findElement(By.xpath("//div[contains(text(),'Pakistan')]")));
-        Scroll.ScrollVertical(driver.findElement(By.xpath("//div[@class='rc-virtual-list-scrollbar rc-virtual-list-scrollbar-show']//div[@class='rc-virtual-list-scrollbar-thumb']")));
+       // Scroll.ScrollVertical(driver.findElement(By.xpath("//div[@class='rc-virtual-list-scrollbar rc-virtual-list-scrollbar-show']//div[@class='rc-virtual-list-scrollbar-thumb']")));
     }
+
+    long first14 = (long) (Math.random() * 100000000000000L);
+    long Save_mol = first14;
 
     @And("[Add Employer] user enter the Mol no {string}")
     public void addEmployerUserEnterTheMolNo(String Molno) throws InterruptedException {
       //  AddEmployerPages.get_Mol_No().sendKeys((Math.random()+Molno);
-        long first14 = (long) (Math.random() * 100000000000000L);
-        AddEmployerPages.get_Mol_No().sendKeys(first14+Molno);
 
+        AddEmployerPages.get_Mol_No().sendKeys(first14 +Molno);
+        System.out.println("MOL NO WHICH IS SAving.....: " +Save_mol);
     }
+
 
     @Then("[Add Employer] user enter the Employer code {string}")
     public void addEmployerUserEnterTheEmployerCode(String empcode) {
@@ -287,7 +308,7 @@ public class AddEmployerSteps {
     public void addEmployerUserValidateTheErrorMessage(String error) throws InterruptedException {
         AddEmployerPages.getError(error).isDisplayed();
         Assert.assertEquals(error,"Please enter Mol Number");
-        Thread.sleep(3000);
+
 
     }
 
@@ -295,6 +316,77 @@ public class AddEmployerSteps {
     public void addEmployerUserSelectTheDocument(String document) {
         AddEmployerPages.get_Document_Feild().click();
         AddEmployerPages.get_Document(document).click();
+    }
+
+    @And("[Add Employer  User Select the Bank {string}")
+    public void addEmployerUserSelectTheBank(String bank) {
+        AddEmployerPages.get_BankDetails().click();
+        AddEmployerPages.get_Select_Bank(bank).click();
+    }
+
+    @Then("[Add Employer] User Select the bask {string}")
+    public void addEmployerUserSelectTheBask(String bank) {
+        AddEmployerPages.get_Bank().sendKeys(bank);
+//        AddEmployerPages.get_Select_Bank(bank).sendKeys(bank);
+        AddEmployerPages.get_Bank().sendKeys(Keys.ENTER);
+    }
+
+    @And("[Add Employer] User enter the branch name {string}")
+    public void addEmployerUserEnterTheBranchName(String BranchName) {
+        AddEmployerPages.get_Branch_Name().sendKeys(BranchName);
+    }
+
+    @Then("[Add Employer] User enter the iBAN no {string}")
+    public void addEmployerUserEnterTheIBANNo(String Iban) {
+        AddEmployerPages.get_Iban().sendKeys(Iban);
+    }
+
+    @Then("[Add Employer] Validate employees should add successfully {string}")
+    public void addEmployerValidateEmployeesShouldAddSuccessfully(String expected) throws InterruptedException {
+        String actual = AddEmployerPages.get_Add_Employee_Successfully().getText();
+        Assert.assertEquals(expected,actual);
+        driver.navigate().back();
+        Thread.sleep(10000);
+//        AddEmployerPages.get_Add_New_Emplyer().sendKeys(Keys.);
+
+    }
+
+    @And("[Add Employer] User enter the Emirates id {string}")
+    public void addEmployerUserEnterTheEmiratesId(String eid) {
+        long first14 = (long) (Math.random() * 10000000000000L);
+        AddEmployerPages.get_Eid_No().sendKeys(first14+eid);
+    }
+
+    @Then("[Add Employer] User tap on eye button")
+    public void addEmployerUserTapOnEyeButton() {
+        AddEmployerPages.get_Eye().click();
+    }
+
+
+    @Then("[Add Employer] Validate the Mol no {string}")
+    public void addEmployerValidateTheMolNo(String val) throws InterruptedException {
+        Thread.sleep(5000);
+        String actual = AddEmployerPages.get_Validate(String.valueOf(first14)).getText();
+        System.out.println("actual mol:" +actual);
+        System.out.println("exp:"+first14);
+        Assert.assertEquals(String.valueOf(first14),actual);
+
+        System.out.println("print value" +actual);
+
+    }
+
+    @Then("[Add Employer] Validate the bank {string}")
+    public void addEmployerValidateTheBank(String bank) {
+       String actual = AddEmployerPages.get_Valid_Bank(bank).getText();
+        Assert.assertEquals(bank,actual);
+        System.out.println(actual);
+    }
+
+    @Then("[Add Employer] check")
+    public void addEmployerCheck() throws InterruptedException {
+        Thread.sleep(5000);
+        String actual =AddEmployerPages.get_Check().getText();
+        Assert.assertEquals(String.valueOf(first14),actual);
     }
 }
 

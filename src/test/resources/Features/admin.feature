@@ -14,8 +14,8 @@ Feature: Update Profile
     And     [Sign Up] User tap on verify button
     Then    [Update Profile] User enter the establishment id ""
     And     [Update Profile] User the address "asdfghjkl;1234567890"
-    Then    [Update Profile] User tap on State
-    And     [Update Profile] Select the state "Dubai"
+    #Then    [Update Profile] User tap on State
+    #And     [Update Profile] Select D:\Hrcms\src\test\java\document\Mansha List test.xlsxstate "Dubai"
     When    [Update Profile] User enter the city "Dubai"
     Then    [Update Profile] User enter the document name "Trade License"
     And     [Update Profile] User enter the document tittle "personal details"
@@ -28,7 +28,7 @@ Feature: Update Profile
     Then    [Update Profile] User tap on browse file
     #Then    [Update Profile] User upload the personal document
     And     [Update Profile] User enter the submit button
-    Then    [Admin Page] Open the admin tab "http://10.40.5.20:3000/"
+    Then    [Admin Page] Open the admin tab "http://admin.getthelingo.com"
     And     [Admin Page] User tap on login page
     Then    [Approval Page] User tap on approval
     And     [Approval Page] User create a new company and also approve by admin "11282"

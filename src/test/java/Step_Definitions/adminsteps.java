@@ -81,7 +81,6 @@ public class adminsteps {
             get_month_select(current_month).click();
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(user_month(expmonth))));
             get_user_month(expmonth).click();
-            Thread.sleep(5000);
         }
     }
 

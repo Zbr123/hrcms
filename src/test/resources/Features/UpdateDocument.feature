@@ -2,7 +2,7 @@
 Feature: Update Document Profile
 
   Scenario: User Upload the Trade License document
-    Given   [Login Page] User enter the email "automation20@mailinator.com"
+    Given   [Login Page] User enter the email "kardiya117@mailinator.com"
     When    [Login Page] User enter the password "Password1"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button
@@ -19,7 +19,7 @@ Feature: Update Document Profile
     And     [Update Document] User tap on Upload Document
 
   Scenario: User Upload the Establishment Card document
-    Given   [Login Page] User enter the email "automation20@mailinator.com"
+    Given   [Login Page] User enter the email "kardiya117@mailinator.com"
     When    [Login Page] User enter the password "Password1"
     Then    [Login page] User tap on login button
     Then    [Employees Page] User tap on employees button

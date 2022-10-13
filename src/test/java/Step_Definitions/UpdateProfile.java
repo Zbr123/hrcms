@@ -12,6 +12,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java8.Th;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -51,20 +53,17 @@ public class UpdateProfile {
         long first14 = (long) (Math.random() * 10000000000000000L);
         UpdateProliePage.getEstablishmentId().sendKeys(first14+eid);
 
-    }
 
-    @Then("[Update Profile] User tap on State")
-    public void updateProfileUserTapOnState() throws InterruptedException {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(state)));
-        UpdateProliePage.getState().click();
     }
 
     @And("[Update Profile] Select the state {string}")
     public void updateProfileSelectTheState(String name) throws InterruptedException {
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(name)));
-        UpdateProliePage.getStateName(name).isSelected();
-        UpdateProliePage.getStateName(name).click();
+      //  wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(name)));
+        //UpdateProliePage.getState().click();
+        UpdateProliePage.getStateName(name).sendKeys(name);
+        UpdateProliePage.getStateName(name).sendKeys(Keys.ENTER);
         //Select sel = new Select();
+        Thread.sleep(5000);
 
 
     }
@@ -112,11 +111,9 @@ public class UpdateProfile {
         UpdateProliePage.getBrowseFile().click();
         Thread.sleep(3000);
 
-        String current_directory = System.getProperty("user.dir");
-
 
         Robot rb = new Robot();
-        StringSelection str = new StringSelection(current_directory+"\\src\\test\\java\\document\\Mansha List test.xlsx");
+        StringSelection str = new StringSelection("D:\\Hrcms\\src\\test\\java\\document\\Mansha List test.xlsx");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
         // press Contol+V for pasting
         rb.keyPress(KeyEvent.VK_CONTROL);
@@ -325,7 +322,7 @@ public class UpdateProfile {
         }
 
         else {
-            get_month_select(current_month).click();
+            get_secondmonth_select(current_month).click();
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(user_month(secondissuemonth))));
             get_user_month(secondissuemonth).click();
         }
@@ -358,7 +355,7 @@ public class UpdateProfile {
         }
 
         else {
-            get_month_select(current_month).click();
+            get_user_secondmonth(current_month).click();
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(user_month(secexpmonth))));
             get_user_month(secexpmonth).click();
         }
@@ -369,11 +366,8 @@ public class UpdateProfile {
         UpdateProliePage.get_Second_Brows_Button().click();
         Thread.sleep(3000);
 
-        String current_directory = System.getProperty("user.dir");
-
-
         Robot rb = new Robot();
-        StringSelection str = new StringSelection(current_directory+"\\src\\test\\java\\document\\Mansha List test.xlsx");
+        StringSelection str = new StringSelection("D:\\Hrcms\\src\\test\\java\\document\\Mansha List test.xlsx");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
         // press Contol+V for pasting
         rb.keyPress(KeyEvent.VK_CONTROL);
@@ -410,7 +404,4 @@ public class UpdateProfile {
     }
 
  */
-
-
-
 }

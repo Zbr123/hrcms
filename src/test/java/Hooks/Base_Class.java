@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -55,13 +56,15 @@ public class Base_Class {
             String projectpath = System.getProperty("user.dir");
             System.out.println("Project path is:" + projectpath);
 
-            System.setProperty("webdriver.chrome.driver", "apps/chromedriver.exe");
+            WebDriverManager.chromedriver().setup();
+
+           // System.setProperty("webdriver.chrome.driver", "apps/chromedriver.exe");
             driver = new ChromeDriver();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4000));
             driver.manage().window().maximize();
             //System.setProperty("webdriver.chrome.whitelistedIps", "");
-            URL url = new URL("http://10.40.5.62:55011");
+            URL url = new URL("http://10.40.5.11:53363");
             driver.navigate().to(url);
 
 
@@ -88,6 +91,10 @@ public class Base_Class {
 //
 //    }
 
+    public static void main(String[] args) {
+        String projectpath = System.getProperty("user.dir");
+        System.out.println(projectpath);
+    }
 
     @After
     public void teardown(){

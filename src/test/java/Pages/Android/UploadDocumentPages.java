@@ -15,7 +15,7 @@ public class UploadDocumentPages {
 
     //locator
     public static String Add_New_Emplyer = "button[title='Add Employee'] span:nth-child(1)";
-    public static String Edit_Button = "(//*[name()='svg'])[8]";
+    public static String Edit_Button = "//button[@id='uploadExcel']";
     public static String  Document_Name(String document) {return "//div[contains(text(),'"+document+"')]";}
     public static String Document = "//div[@name=\"documentTitle0\"]";
     public static String Brows_Document = "uploadExcel";

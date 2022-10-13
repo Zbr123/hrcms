@@ -1,10 +1,14 @@
 package Pages.Android;
 
 import Hooks.Base_Class;
+import org.codehaus.jackson.map.MapperConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.*;
+import java.util.BitSet;
 
 import static Pages.Android.UpdateProliePage.*;
 import static Pages.Android.UpdateProliePage.document;
@@ -41,16 +45,20 @@ public class AddEmployerPages {
     public static String Pass_Port_no = "passportNumber";
 
     public static String Country(String country) {
-        return "//div[contains(text(),'" + country + "')]";
+        return "//div[contains(text(),'"+country+"')]";
     }
 
-    public static String Nationality = "nationality";
+    public static String Nationality = "#nationality";
     public static String Mol_No = "molNo";
     public static String Emp_Code = "empCode";
     public static String Date_Of_Joining = "doj";
     public static String first_Name_Error = ".error";
     public static String year_arrow_xpath = "(//*[@class='ant-picker-header-super-prev-btn'])[3]";
-
+    public static String Branch_Name= "#branchName";
+    public static String Iban = "#iban";
+    public static String Add_Employer_Successfully = "div[class='ant-message'] span:nth-child(2)";
+    public static String Select_COuntry = "(//*[@class='ant-select ant-select-single ant-select-show-arrow ant-select-show-search'])[2]";
+    public static String Eid_No = "#eid";
 
     public static WebElement get_Add_New_Emplyer() {
         return Base_Class.driver.findElement(By.cssSelector(Add_New_Emplyer));
@@ -104,13 +112,26 @@ public class AddEmployerPages {
         return "div[title='"+document+"']";
     }
     public static String Document_Name = "documentTitle0";
+    public static String BankDetails = "span[title='Employee Type']";
+    public static String Select_Bank(String bank){
+        return "div[title='"+bank+"'] ";
+    }
+    public static String Bank = "#bankName";
+    public static String Eye = "(//*[@class='c-icon large'])[1]";
+    public static String Validation(String valid){
+        return "//span[normalize-space()='"+valid+"']";
+    }
+    private static String Valid_Bank(String bank) {
+        return "//span[normalize-space()='"+bank+"']";
+    }
+    public static String Check = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/div/div[2]/div/ul/li[3]/span[2]";
 
     public static WebElement get_Country(String country) {
         return Base_Class.driver.findElement(By.xpath(Country(country)));
     }
 
     public static WebElement get_Nationality() {
-        return Base_Class.driver.findElement(By.name(Nationality));
+        return Base_Class.driver.findElement(By.cssSelector(Nationality));
     }
 
     public static WebElement get_Mol_No() {
@@ -171,5 +192,61 @@ public class AddEmployerPages {
     }
     public static WebElement get_Document_Feild(){
         return Base_Class.driver.findElement(By.name(Document_Name));
+    }
+
+    public static WebElement get_BankDetails() {
+
+        return Base_Class.driver.findElement(By.cssSelector(BankDetails));
+
+    }
+
+    public static WebElement get_Select_Bank(String bank) {
+        return Base_Class.driver.findElement(By.cssSelector(Select_Bank(bank)));
+
+    }
+
+    public static WebElement get_Bank() {
+        return Base_Class.driver.findElement(By.cssSelector(Bank));
+    }
+
+    public static WebElement get_Branch_Name() {
+
+        return Base_Class.driver.findElement(By.cssSelector(Branch_Name));
+    }
+
+    public static WebElement get_Iban() {
+        return Base_Class.driver.findElement(By.cssSelector(Iban));
+    }
+
+    public static WebElement get_Add_Employee_Successfully() {
+        return Base_Class.driver.findElement(By.cssSelector(Add_Employer_Successfully));
+    }
+
+    public static WebElement get_Select_Country() {
+        return Base_Class.driver.findElement(By.xpath(Select_COuntry));
+    }
+
+    public static WebElement get_Eid_No() {
+        return Base_Class.driver.findElement(By.cssSelector(Eid_No));
+    }
+
+    public static WebElement get_Eye() {
+
+        return Base_Class.driver.findElement(By.xpath(Eye));
+    }
+
+
+    public static WebElement get_Validate(String save_mol) {
+        return Base_Class.driver.findElement(By.xpath(Validation(save_mol)));
+    }
+
+    public static WebElement get_Valid_Bank(String bank) {
+        return Base_Class.driver.findElement(By.xpath(Valid_Bank(bank)));
+    }
+
+
+    public static WebElement get_Check() {
+
+        return Base_Class.driver.findElement(By.xpath(Check));
     }
 }

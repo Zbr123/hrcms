@@ -36,7 +36,7 @@ public class SignUpSteps {
 
     @Given("[Sign Up] User tap on Sign up button")
     public void signUpUserTapOnSignUpButton() throws InterruptedException {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(signUpUserTapOnSignUpButton)));
+       // wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(signUpUserTapOnSignUpButton)));
         SignUpPage.signUpUserTapOnSignUpButton().click();
 
 
@@ -216,7 +216,7 @@ public class SignUpSteps {
         String current_month = currentMonth();
 
         if (current_month == expmonth) {
-            Thread.sleep(100);
+
         }
 
         else {
@@ -233,7 +233,6 @@ public class SignUpSteps {
 
         }
     }
-
 
 
 }
