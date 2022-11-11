@@ -1,4 +1,4 @@
--- Manual Charges
+--- Manual Charges
 select * from ManualChargesDetail
 select * from AdditionalCharges
 select * from FNGL_Transactions_HI
@@ -37,7 +37,51 @@ Entry in all 4 tables
 HRPR_ExportSIFFiles_HI filename should be in SELECT *
 FROM WPSFileProcessing.dbo.SifMaster as coreDbreference
 
+PAFMaster
+PAF Detail in WPS processing DB
+
+there is one column in sifMaster with the name of PafrefId
+tghrough you can relate sifMaster with Pasf
+
 =======================Eligibility of wallet ID===========================
+
+
+==============advanced salary using Web Portal=============
+select * from AdvanceSalary  -- shows current status
+select *  from AdvanceSalaryDetail
+select * from AdvanceSalaryStatustracking   --shows previous status
+select * from AdvanceSalaryHeader
+
+DEBIT = what we receive
+Credit = what we give
+Transaction refernece no is incremental
+
+select
+	PayrollDate as SalaryDate, t1.Month as SalaryMonth, t1.Year as SalaryYear,
+	
+	t2.NetAmount as SalaryAmount, t2.EmpPersonalNumber
+	from
+	WPSFileProcessing.dbo.PAFMaster as t1
+	join WPSFileProcessing.dbo.PAFDetail as t2 on t1.Id = t2.PAFMasterId
+where t2.EmpPersonalNumber = '10001078949383'
+white_check_mark
+eyes
+raised_hands
+React
+Reply
+
+3:54
+--update WPSFileProcessing.dbo.PAFMaster
+	--set PayrollDate = '2022-08-05'
+	--where Id = 1
+
+
+Advanced salary eligibility amount = 
+
+30% of:
+
+-last salary OR average salary of last 3 months
+(whichever is lower)
 
 
 =============/Employee/GetEmployeeBalance API=============
@@ -202,3 +246,98 @@ the dbo.status, dbo.AdvanceSalary ,dbo.AdvanceSalaryDetail tables should
 be updated accordingly
 
 The status id should be 48(pending). Also check the debit and credit amounts against that entry.
+
+=====================Recovery Detail==================
+
+ONLY WORKS WHEN status: disburse
+
+RecoveryStatusId: Pending, partially receive, null
+
+
+Select top 1 CashloadMasterId from CoreDb.dbo.PCMS_Cashload_Master
+  where
+  Status =@StatusId and Companyid= @Companyid and Productid =@Productid )
+  Select * from CoreDb.dbo.PCMS_Cashload_Detail
+  where CashloadMasterId = 15 and Amount != 0   
+
+-- above will appear in cash load file
+
+
+If penalty =1 in SELECT * FROM [CoreDb].[dbo].[SystemSettings] table,
+SELECT * FROM [CoreDb].[dbo].[AdvanceSalaryDetail] will have 3 entries,
+1 seperate entry for charges
+
+Also check the due date along with penalty =1, if due date has passed only
+then charges entry will come
+
+
+
+===================Advanced salary FULL Detail=========================
+select *  from AdvanceSalary
+select *  from AdvanceSalaryDetail
+select  from AdvanceSalaryStatustracking
+select from AdvanceSalaryCharges
+
+
+when salary first comes, it goes to pending on Web portal
+Accept and send to bank using web portal
+
+Bank ID and Password on WEBPORTAL(send to bank wali requests yahan aein gi) :
+User: sadaf	
+Password: sadaf
+
+If bank approves, advanced salary table status changes
+Recovery status is pending and advanced status ID is 40
+
+Due date mei last salary date+30 Days add kero
+
+
+Loan Pay company ID we will make when loans are given
+
+JobStatus =1 if job hasnt run
+
+JobName = ProcessSentMTPtoNI on hangfire server
+
+NI wants seperate file for each company 
+
+filename mei productcode + MTP + datetime
+
+IServiceManager.ProcessAdvanceSalaryMtp job purpose(file bana deti hy
+run with other job): 
+
+D:\00 - SFTP KP\NI_PCMS\PROD\Outbound\2022\Nov\111122 filepath for job	
+
+isme records girein ge when job runs:	
+select * from FNGL_ManualTransactionBatch_HI order by 1 desc
+select * from FNGL_ManualTransactionEmployee_HI where BatchNo=28
+
+CHECK ALL STATUSES RIGOUROUSLY
+
+
+
+FOR processsendMTPfiletoNIJOB(iska koi status nhi):
+
+aaj ki date mei jakay jitni files hein unko NI bhej dega
+
+1>OUTBOUND FILES SENT TO SFTP at NI
+2>OUTBOUND FILES WHICH ARE SUCCESSFULLY SENT TO SFTP come to inbound
+ 
+
+After this(this job is not yet made):
+
+NI sends feedback file
+NI returns 2 things to us, TransactionRefNo and approve/Reject status
+
+If success, success response in both debit/credit
+AdvanceSalaryDetail(this table will only have 
+success/fail) will update and will be success 
+and go to AdvanceSalary Table.
+
+Advance Salary will be disbursed status if both debit/credit transactions
+are successful
+
+FOR SFTP ACCESS: Download: WinSCP
+SFTP SERVER IP : 20.74.153.18
+SFTP USERNAME : waqas
+SFTP PASSWORD : Waqas@123456
+PortNo:22
